@@ -1,0 +1,166 @@
+[
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Appointments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "Create",
+    "RelativePath": "api/Appointments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "appointmentDto",
+        "Type": "AppointmentManagementAPI.DTOs.AppointmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "Get",
+    "RelativePath": "api/Appointments/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "Update",
+    "RelativePath": "api/Appointments/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "appointmentDto",
+        "Type": "AppointmentManagementAPI.DTOs.AppointmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "Delete",
+    "RelativePath": "api/Appointments/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "Cancel",
+    "RelativePath": "api/Appointments/{id}/cancel",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "Complete",
+    "RelativePath": "api/Appointments/{id}/complete",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "Reschedule",
+    "RelativePath": "api/Appointments/{id}/reschedule",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "AppointmentManagementAPI.DTOs.RescheduleRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "GetByDate",
+    "RelativePath": "api/Appointments/by-date/{date}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentManagementAPI.Controllers.AppointmentsController",
+    "Method": "GetByRequestor",
+    "RelativePath": "api/Appointments/by-requestor/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
