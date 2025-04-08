@@ -158,11 +158,6 @@ AppointmentManagementAPI/
 | PUT         | `/api/Appointments/{id}/complete`        | ❌                 | ✅               |
 | PUT         | `/api/Appointments/{id}/cancel`          | ✅ (own)           | ✅ (all)         |
 
----
-
-## 📄 License
-
-MIT License. Feel free to use and contribute.
 
 ---
 
