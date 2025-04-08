@@ -21,7 +21,7 @@ An ASP.NET Core Web API for managing appointments with role-based access control
 ### 🔃 Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/AppointmentManagementAPI.git
+git clone https://github.com/AntaryamiSpikewell/AppointmentManagement
 cd AppointmentManagementAPI
 ```
 
