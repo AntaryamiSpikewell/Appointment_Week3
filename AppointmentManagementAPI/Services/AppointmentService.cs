@@ -1,7 +1,9 @@
 ﻿using AppointmentManagementAPI.DTOs;
 using AppointmentManagementAPI.Models;
-using AppointmentManagementAPI.Repositories;
+using AppointmentManagementAPI.Repositories.Interfaces;
+using AppointmentManagementAPI.Services.Interfaces;
 using AutoMapper;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AppointmentManagementAPI.Services
 {
@@ -41,9 +43,9 @@ namespace AppointmentManagementAPI.Services
         {
             var existingAppointment = await _repository.GetByIdAsync(appointmentDto.Id);
             if (existingAppointment == null)
-                return false; // Ensure entity exists before updating
+                return false;
 
-            _mapper.Map(appointmentDto, existingAppointment); // Update fields instead of creating new object
+            _mapper.Map(appointmentDto, existingAppointment);
             return await _repository.UpdateAsync(existingAppointment);
         }
 
@@ -58,7 +60,19 @@ namespace AppointmentManagementAPI.Services
             return appointments.Select(a => new AppointmentDto
             {
                 Id = a.Id,
-                RequestorName = a.RequestorName,
+                UserId = a.UserId,
+                ScheduledDate = a.ScheduledDate,
+                Status = a.Status
+            }).ToList();
+        }
+
+        public async Task<List<AppointmentDto>> GetAppointmentsByDateForUserAsync(DateTime date, int userId)
+        {
+            var appointments = await _repository.GetByDateForUserAsync(date, userId);
+            return appointments.Select(a => new AppointmentDto
+            {
+                Id = a.Id,
+                UserId = a.UserId,
                 ScheduledDate = a.ScheduledDate,
                 Status = a.Status
             }).ToList();
@@ -70,7 +84,7 @@ namespace AppointmentManagementAPI.Services
             return appointments.Select(a => new AppointmentDto
             {
                 Id = a.Id,
-                RequestorName = a.RequestorName,
+                UserId = a.UserId,
                 ScheduledDate = a.ScheduledDate,
                 Status = a.Status
             }).ToList();
@@ -82,10 +96,10 @@ namespace AppointmentManagementAPI.Services
             {
                 var appointment = await _repository.GetByIdAsync(id);
                 if (appointment == null)
-                    throw new KeyNotFoundException($"Appointment with ID {id} not found.");
+                    throw new Exception($"Appointment with ID {id} not found.");
 
                 if (appointment.Status is "Completed" or "Cancelled")
-                    throw new InvalidOperationException($"Cannot reschedule a {appointment.Status} appointment.");
+                    throw new Exception($"Cannot reschedule a {appointment.Status} appointment.");
 
                 // Convert input date to UTC
                 DateTime utcDate = newDate.ToUniversalTime();
@@ -96,10 +110,11 @@ namespace AppointmentManagementAPI.Services
 
                 // Validate time is within allowed hours (9 AM - 7 PM PST)
                 if (pstDate.Hour is < 9 or > 19)
-                    throw new ArgumentException($"Rescheduling failed: Time {pstDate:hh:mm tt} PST is outside allowed hours (9 AM - 7 PM PST).");
+                    throw new Exception($"Rescheduling failed: Time {pstDate:hh:mm tt} PST is outside allowed hours (9 AM - 7 PM PST).");
 
                 // Update appointment details
                 appointment.ScheduledDate = utcDate;
+                appointment.Status = "Rescheduled";
                 appointment.UpdatedAt = DateTime.UtcNow;
 
                 bool updated = await _repository.UpdateAsync(appointment);
@@ -108,12 +123,9 @@ namespace AppointmentManagementAPI.Services
 
                 return true;
             }
-            catch (KeyNotFoundException ex) { throw; }
-            catch (InvalidOperationException ex) { throw; }
-            catch (ArgumentException ex) { throw; }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw new Exception($"Rescheduling failed: {ex.Message}");
+                throw new Exception($"Rescheduling failed: {e.Message}");
             }
         }
 

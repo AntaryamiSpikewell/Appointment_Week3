@@ -7,7 +7,8 @@ namespace AppointmentManagementAPI.DTOs
     public class AppointmentDto
     {
         public int Id { get; set; }
-        public string RequestorName { get; set; }
+
+        public int UserId { get; set; } // Foreign key to Users table
 
         [JsonConverter(typeof(IsoDateTimeConverter))]
         public DateTime ScheduledDate { get; set; } // Always in UTC

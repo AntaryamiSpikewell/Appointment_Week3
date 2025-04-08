@@ -1,6 +1,6 @@
 ﻿using AppointmentManagementAPI.DTOs;
 
-namespace AppointmentManagementAPI.Services
+namespace AppointmentManagementAPI.Services.Interfaces
 {
     public interface IAppointmentService
     {
@@ -13,6 +13,7 @@ namespace AppointmentManagementAPI.Services
         Task<bool> CompleteAppointmentAsync(int id);
         Task<bool> CancelAppointmentAsync(int id);
         Task<List<AppointmentDto>> GetAppointmentsByDateAsync(DateTime date);
+        Task<List<AppointmentDto>> GetAppointmentsByDateForUserAsync(DateTime date, int userId);
         Task<List<AppointmentDto>> GetAppointmentsByRequestorNameAsync(string name);
         Task<bool> HasExistingAppointmentAsync(int patientId, DateTime date);
     }

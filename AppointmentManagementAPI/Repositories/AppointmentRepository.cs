@@ -1,5 +1,6 @@
 ﻿using AppointmentManagementAPI.Data;
 using AppointmentManagementAPI.Models;
+using AppointmentManagementAPI.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -49,9 +50,8 @@ namespace AppointmentManagementAPI.Repositories
                 if (existingAppointment == null)
                     throw new KeyNotFoundException($"Appointment with ID {appointment.Id} not found.");
 
-                // Ensure only modifiable fields are updated
                 existingAppointment.ScheduledDate = appointment.ScheduledDate;
-                existingAppointment.UpdatedAt = DateTime.UtcNow;  // Ensure UpdatedAt timestamp is set
+                existingAppointment.UpdatedAt = DateTime.UtcNow;  // Ensure UpdatedAt timestamp is Set
 
                 await _context.SaveChangesAsync();
                 return true;
@@ -64,7 +64,7 @@ namespace AppointmentManagementAPI.Repositories
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Unexpected error while updating appointment.");
-                throw; // Rethrow the exception so the controller can handle it properly
+                throw;
             }
         }
 
@@ -86,10 +86,17 @@ namespace AppointmentManagementAPI.Repositories
                 .ToListAsync();
         }
 
+        public async Task<List<Appointment>> GetByDateForUserAsync(DateTime date, int userId)
+        {
+            return await _context.Appointments
+                .Where(a => a.ScheduledDate.Date == date.Date && a.UserId == userId)
+                .ToListAsync();
+        }
+
         public async Task<List<Appointment>> GetByRequestorNameAsync(string name)
         {
             return await _context.Appointments
-                .Where(a => a.RequestorName.Contains(name))
+                .Where(a => a.User.Username.Contains(name))
                 .ToListAsync();
         }
 

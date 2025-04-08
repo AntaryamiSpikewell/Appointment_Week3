@@ -342,7 +342,6 @@ C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\Ap
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AppointmentManagementAPI.props
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AppointmentManagementAPI.props
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\Appointm.68599829.Up2Date
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\AppointmentManagementAPI.dll
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\refint\AppointmentManagementAPI.dll
@@ -350,3 +349,6 @@ C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\Ap
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\AppointmentManagementAPI.genruntimeconfig.cache
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\ref\AppointmentManagementAPI.dll
 C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\bin\Debug\net8.0\DTOs\RescheduleRequestDto.cs
+C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\AppointmentManagementAPI.sourcelink.json
+C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Antaryami Spikewell\OneDrive\Desktop\AppointmentManagementAPI Latest\AppointmentManagementAPI\AppointmentManagementAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -1,6 +1,6 @@
 ﻿using AppointmentManagementAPI.Models;
 
-namespace AppointmentManagementAPI.Repositories
+namespace AppointmentManagementAPI.Repositories.Interfaces
 {
     public interface IAppointmentRepository
     {
@@ -10,6 +10,7 @@ namespace AppointmentManagementAPI.Repositories
         Task<bool> UpdateAsync(Appointment appointment);
         Task<bool> DeleteAsync(int id);
         Task<List<Appointment>> GetByDateAsync(DateTime date);
+        Task<List<Appointment>> GetByDateForUserAsync(DateTime date, int userId);
         Task<List<Appointment>> GetByRequestorNameAsync(string name);
         Task<bool> UpdateStatusAsync(int id, string status);
         Task<bool> HasExistingAppointmentAsync(int patientId, DateTime date);
